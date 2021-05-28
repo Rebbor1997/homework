@@ -11,12 +11,7 @@ public class Robot implements IRobot {
             this.leg = leg;
         }
 
-        public Robot(ToshibaHead head, SonyHand hand, SamsungLeg toshibaHead){
 
-        }
-
-    public Robot(SamsungHead samsungHead, SonyHand sonyHand, ToshibaHead toshibaHead) {
-    }
     public IHead getHead() {
         return head;
     }
