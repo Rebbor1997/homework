@@ -2,49 +2,30 @@ package com.company;
 
 
 
-import com.company.lesson4.Computer;
-import com.company.lesson5.*;
-
-import javax.sound.sampled.Line;
-import java.util.Random;
-import java.util.Scanner;
+import com.company.lesson6.robot.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Transport transport = new Transport(12, 13, 18, "audi");
-        transport.Info();
-        transport.getPowerKW();
-
-        AirTransport airTransport = new AirTransport(23, 45, 56, "bmw",
-                56, 76);
-        airTransport.Info();
-
-        LandTransport landTransport = new LandTransport(24, 32, 12, "mers",
-                65, 54);
-        landTransport.Info();
-
-        PassengerTransport passengerTransport = new PassengerTransport(65, 87, 90, "dgd",
-                34, 45, 90, 60);
-        passengerTransport.Info();
-        passengerTransport.calculateRoute(2);
-        passengerTransport.fuelСalculation(50.0);
-
-        FreightTransport freightTransport = new FreightTransport(56, 43, 33, "ghj",
-                55, 88, 22);
-        freightTransport.Info();
-        freightTransport.calculationCargo(72);
-
-        CivilTransport civilTransport = new CivilTransport (23, 34, 45, "dfd",
-                23, 12, 45, true);
-        civilTransport.Info();
-        civilTransport.calculationPas(8);
-
-        WarTransport warTransport = new WarTransport(11, 22, 33, "joi", 33,
-                33, 0, true);
-        warTransport.Info();
-        warTransport.Shot();
-        warTransport.Bailout();
+        Robot robot1 = new Robot(new SonyHead(34), new SamsungHand(23), new ToshibaLeg(45));
+        int price1 = robot1.getPrice();
+        System.out.println(price1);
+        Robot robot2 = new Robot(new SamsungHead(90), new SonyHand(98), new ToshibaLeg(87));
+        int price2 = robot2.getPrice();
+        System.out.println(price2);
+        robot2.action();
+        Robot robot3 = new Robot(new ToshibaHead(56), new SonyHand(65), new SamsungLeg(43));
+        int price3 = robot3.getPrice();
+        System.out.println(price3);
+        if (price1 > price2 & price1 > price3) {
+            System.out.println("Самый дорогой первый робот " + price1);
+        }
+        if (price2 > price1 & price2 > price3) {
+            System.out.println("Самый дорогой второй робот " + price2);
+        }
+        if (price3 > price1 & price3 > price2) {
+            System.out.println("Самый дорогой третий робот " + price3);
+        }
     }
 }
 

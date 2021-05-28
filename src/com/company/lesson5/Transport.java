@@ -1,6 +1,6 @@
 package com.company.lesson5;
 
-public class Transport  {
+public  class Transport  {
     protected Integer power;
     protected Integer maxSpeed;
     protected Integer weight;
